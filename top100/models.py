@@ -17,7 +17,6 @@ class Album(models.Model):
     artistaAlbum = models.ForeignKey(Artista, on_delete=models.CASCADE)
     estiloAlbum = models.ForeignKey(Estilo, on_delete=models.CASCADE)
 
-
 class Cancion(models.Model):
     nombreCancion = models.CharField(max_length = 50)
     videoCancion = models.CharField(max_length = 300)#Al entrar en carac. saque un video de esa cancion
