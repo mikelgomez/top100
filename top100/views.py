@@ -5,9 +5,12 @@ from django.shortcuts import get_object_or_404, get_list_or_404
 from .models import Artista, Album, Estilo, Cancion
 
 def index(request):#canciones
-	canciones = get_list_or_404(Cancion.objects.order_by('id'))
-	context = {'lista_canciones': canciones }
-	return render(request, 'index.html', context)
+	return render(request, 'index.html')
+
+#def index(request):#canciones
+#	canciones = get_list_or_404(Cancion.objects.order_by('id'))
+#	context = {'lista_canciones': canciones }
+#	return render(request, 'index.html', context)
 
 def detailCancion(request, post_id):#Para ir desde canciones a la cancion especifica
     cancion = get_object_or_404(Cancion, pk=cancion_id)
