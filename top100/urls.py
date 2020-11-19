@@ -3,7 +3,8 @@ from . import views
 
 urlpatterns = [
    path('', views.index, name='index'),
-   path('featured/', views.featured, name='featured'),
+   path('albumes/', views.albumes, name='albumes'),
+   path('albumes/<int:album_id>', views.detailAlbum, name='detailAlbum'), #detalles de albumes
    path('join/', views.join, name='join'),
    path('portfolio/', views.port, name='port'),
    path('eventos/', views.eventos, name='eventos'),

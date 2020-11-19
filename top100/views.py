@@ -9,8 +9,16 @@ from .models import Artista, Album, Estilo, Cancion
 def index(request):
 	return render(request, 'principal.html')
 
-def featured(request):
-	return render(request, 'featured.html')
+def albumes(request):
+	albums = get_list_or_404(Album.objects.order_by('id'))
+	context = {'lista_albums': albums }
+	return render(request, 'albumes.html', context)
+
+def detailAlbum(request, album_id):#Para ir desde los albums al album
+	album = get_object_or_404(Album, pk=album_id)
+	canciones = get_list_or_404(Cancion, albumCancion=album)
+	context = {'album': album, 'canciones' : canciones}
+	return render(request, 'detailAlbum.html', context)
 
 def join(request):
 	return render(request, 'join.html')

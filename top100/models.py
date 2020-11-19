@@ -20,6 +20,7 @@ class Estilo(models.Model):
 class Album(models.Model):
     nombreAlbum = models.CharField(max_length=50)
     imagenAlbum = models.CharField(max_length=200)
+    descripcionAlbum = models.TextField(null = True)
     artistaAlbum = models.ForeignKey(Artista, on_delete=models.CASCADE)
     estiloAlbum = models.ForeignKey(Estilo, on_delete=models.CASCADE)
 
