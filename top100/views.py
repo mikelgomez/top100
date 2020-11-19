@@ -5,7 +5,6 @@ from django.shortcuts import get_object_or_404, get_list_or_404
 from .models import Artista, Album, Estilo, Cancion
 
 
-
 def index(request):
 	return render(request, 'principal.html')
 
@@ -27,7 +26,7 @@ def artistas(request):
 
 def detailArtista(request, artista_id):#Para ir desde los artistas al artista
 	artista = get_object_or_404(Artista, pk=artista_id)
-	albumes = get_list_or_404(Album, artistaAlbum=artista)
+	albumes = get_list_or_404(Album.objects.order_by('nombreAlbum'), artistaAlbum=artista)
 	context = {'artista': artista, 'albumes': albumes}
 	return render(request, 'detailArtista.html', context)
 
