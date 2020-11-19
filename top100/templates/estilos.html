@@ -2,45 +2,69 @@
 {% load static %}
 {% block contenido %}
 
-<div class="portfolio pad" id="portfolio">
-    <div>
-        <!-- default heading -->
-        <div class="default-heading">
-            <!-- heading -->
-            <h2>Estilos</h2>
-        </div>
-    </div>
-    <!-- portfolio -->
-    <div class="portfolio-content" id="portfolioOwl">
-        <div class="item">
-            {% if estilos %}
-				{% for e in estilos %}
-                <!-- item image -->
-                <img class="img-responsive" src={{e.imagenEstilo}} alt="" width="400" height="400">
-                <!-- transparent background -->
-                <div class="p-transparent"></div>
-                <!-- on mouse hover details -->
-                <div class="p-hover">
-                    <!-- heading /title -->
-                    <h3>{{e.nombreEstilo}}</h3>
-                    <hr>
-                    <!-- project details -->
-                    <p>Detalles...</p>
-                    <!-- icon -->
-                    <a href="/proyecto/estilos/{{e.id}}"><i class="fa fa-share"></i></a>
-                </div>
-                {% endfor %}
-			{% else %}
-				<p>No hay estilos creados.</p>
-			{% endif %}
-        </div>
-        
-    </div>
-    <div class="text-center">
-        <a href="#" class="btn btn-lg btn-theme">View more</a>
-    </div>
-    <!-- portfolio end -->
+<!-- albumes -->
+<div class="featured pad" id="featuredalbum">
+	<div class="container">
+		<!-- default heading -->
+		<div class="default-heading">
+			<!-- heading -->
+			<h2>Nuestros Estilos</h2>
+		</div>
+		<!-- featured album elements -->
+		<div class="featured-element">
+			<div class="row">
+				{% if estilos %}
+					{% for e in estilos %}
+					<div class="col-md-4 col-sm-6">
+						<!-- featured item -->
+						<div class="featured-item ">
+							<!-- image container -->
+							<div class="figure">
+								<!-- imagen -->
+								<img class="img-responsive" src={{e.imagenEstilo}} width="400" height="400"  alt="Portada del estilo {{e.nombreEstilo}}" />
+								<!-- descripcion -->
+								<p>Descripcion...</p>
+							</div>
+							<!-- featured information -->
+							<div class="featured-item-info">
+								<!-- featured title -->
+								<h4><a href="/proyecto/estilos/{{e.id}}">{{e.nombreEstilo}}</a></h4>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				{% else %}
+					<p>No hay albumes creados.</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
 </div>
+<!-- features end -->
 
-
+<!-- call to action -->
+<div class="cta parallax-one pad">
+	<div class="container">
+		<!-- cta element -->
+		<div class="cta-element ">
+			<div class="row">
+				<div class="col-md-9 col-sm-8">
+					<!-- heading -->
+					<h3>Melodi, A Fully Rock Album Pro</h3>
+					<!-- paragraph -->
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+						labore et dolore magna aliqua. Ut enim sectetur adipiscing elit, sed do eiusmod tempoad minim
+						veniam consequat.</p>
+				</div>
+				<div class="col-md-3 col-sm-4">
+					<div class="cta-btn text-center">
+						<!-- purchase now button -->
+						<a href="#" class="btn btn-default btn-lg">Download Now</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/ cta end -->
 {% endblock %}
