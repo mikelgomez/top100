@@ -20,8 +20,16 @@ def detailAlbum(request, album_id):#Para ir desde los albums al album
 	context = {'album': album, 'canciones' : canciones}
 	return render(request, 'detailAlbum.html', context)
 
-def join(request):
-	return render(request, 'join.html')
+def artistas(request):
+	artistas = get_list_or_404(Artista.objects.order_by('id'))
+	context = {'lista_artistas': artistas }
+	return render(request, 'artistas.html', context)
+
+def detailArtista(request, artista_id):#Para ir desde los artistas al artista
+	artista = get_object_or_404(Artista, pk=artista_id)
+	albumes = get_list_or_404(Album, artistaAlbum=artista)
+	context = {'artista': artista, 'albumes': albumes}
+	return render(request, 'detailArtista.html', context)
 
 def port(request):
 	return render(request, 'portfolio.html')

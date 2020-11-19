@@ -1,0 +1,71 @@
+{% extends "index.html" %}
+{% load static %}
+{% block contenido %}
+
+<!-- artistas -->
+<div class="featured pad" id="artistas">
+	<div class="container">
+		<!-- default heading -->
+		<div class="default-heading">
+			<!-- heading -->
+			<h2>Nuestros Artistas</h2>
+		</div>
+		<!-- featured album elements -->
+		<div class="featured-element">
+			<div class="row">
+				{% if lista_artistas %}
+					{% for a in lista_artistas %}
+					<div class="col-md-4 col-sm-6">
+						<!-- featured item -->
+						<div class="featured-item ">
+							<!-- image container -->
+							<div class="figure">
+								<!-- image -->
+								<img class="img-responsive" src="{% static 'img/featured/1.jpg'%}" alt="" />
+								<!-- paragraph -->
+								<p>{{a.descripcionArtista}}</p>
+							</div>
+							<!-- featured information -->
+							<div class="featured-item-info">
+								<!-- featured title -->
+								<h4><a href="/proyecto/artistas/{{a.id}}">{{a.nombreArtista}}</a></h4>
+								<!-- horizontal line -->
+								<hr />
+								<!-- some responce from social medial or web likes -->
+								<!--<p>Artista: {{a.artistaAlbum}}</p> -->
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				{% else %}
+					<p>No hay artistas creados.</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+<!-- features end -->
+<!--/ end work with us -->
+<div class="news-letter">
+    <div class="container">
+        <!-- news letter inner content -->
+        <div class="news-content ">
+            <!-- heading -->
+            <h3>Sign Up For Newsletter</h3>
+            <!-- paragraph -->
+            <p><strong>Contact Us</strong> and let us know if you have any questions, Don't forget to subscribe for more
+                awesome stuff by typing mail bellow.</p>
+            <!-- subscribe form -->
+            <form>
+                <div class="input-group">
+                    <input type="text" class="form-control input-lg" placeholder="Email">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-lg" type="button">Subscribe</button>
+                    </span>
+                </div><!-- /input-group -->
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
