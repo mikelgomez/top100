@@ -15,7 +15,7 @@
 			<ul>
                 {% if canciones %}
 					{% for c in canciones %}
-					    <li>{{c.nombreCancion}}</li>
+					    <li>{{c.numeroAlbum}}) {{c.nombreCancion}}</li>
 					{% endfor %}
 				{% else %}
 					<p>No hay canciones creadas en este album.</p>

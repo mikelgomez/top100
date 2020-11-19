@@ -16,7 +16,7 @@ def albumes(request):
 
 def detailAlbum(request, album_id):#Para ir desde los albums al album
 	album = get_object_or_404(Album, pk=album_id)
-	canciones = get_list_or_404(Cancion, albumCancion=album)
+	canciones = get_list_or_404(Cancion.objects.order_by('numeroAlbum'), albumCancion=album)
 	context = {'album': album, 'canciones' : canciones}
 	return render(request, 'detailAlbum.html', context)
 
