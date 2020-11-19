@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+{% load static %}
+{% block contenido %}
+
+<div class="portfolio pad" id="portfolio">
+    <div>
+        <!-- default heading -->
+        <div class="default-heading">
+            <!-- heading -->
+            <h2>Estilos</h2>
+        </div>
+    </div>
+    <!-- portfolio -->
+    <div class="portfolio-content" id="portfolioOwl">
+        <div class="item">
+            {% if estilos %}
+				{% for e in estilos %}
+                <!-- item image -->
+                <img class="img-responsive" src={{e.imagenEstilo}} alt="" width="400" height="400">
+                <!-- transparent background -->
+                <div class="p-transparent"></div>
+                <!-- on mouse hover details -->
+                <div class="p-hover">
+                    <!-- heading /title -->
+                    <h3>{{e.nombreEstilo}}</h3>
+                    <hr>
+                    <!-- project details -->
+                    <p>Detalles...</p>
+                    <!-- icon -->
+                    <a href="/proyecto/estilos/{{e.id}}"><i class="fa fa-share"></i></a>
+                </div>
+                {% endfor %}
+			{% else %}
+				<p>No hay estilos creados.</p>
+			{% endif %}
+        </div>
+        
+    </div>
+    <div class="text-center">
+        <a href="#" class="btn btn-lg btn-theme">View more</a>
+    </div>
+    <!-- portfolio end -->
+</div>
+
+
+{% endblock %}

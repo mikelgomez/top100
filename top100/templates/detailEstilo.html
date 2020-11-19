@@ -1,14 +1,14 @@
 {% extends "index.html" %}
 {% load static %}
 {% block contenido %}
-{% if artista %}
+{% if estilo %}
 <!-- artista -->
 <div class="featured pad" id="artista">
 	<div class="container">
 		<!-- default heading -->
 		<div class="default-heading">
 			<!-- heading -->
-			<h2>{{artista.nombreArtista}}</h2>
+			<h2>{{estilo.nombreEstilo}}</h2>
 		</div>
 		<!-- featured album elements -->
 		<div class="featured-element">
@@ -29,7 +29,7 @@
 							<div class="featured-item-info">
 								<!-- featured title -->
 								<h4><a href="/proyecto/albumes/{{a.id}}">{{a.nombreAlbum}}</a></h4>
-								<p>Estilo: <a href="/proyecto/estilos/{{a.estiloAlbum.id}}">{{a.estiloAlbum}}<!--</a> --> </p>
+								<p>Artista: <a href="/proyecto/artistas/{{a.artistaAlbum.id}}">{{a.artistaAlbum}}<!--</a> --> </p>
 								<!-- horizontal line -->
 								<hr />
 							</div>
