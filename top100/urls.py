@@ -12,11 +12,11 @@ urlpatterns = [
    path('eventos/', views.eventos, name='eventos'),
    path('equipo/', views.equipo, name='equipo'),
    path('contacto/', views.contacto, name='contacto'),
-   #path('cancion', views.index, name='cancion'), #todas las canciones
+   path('canciones/', views.index, name='canciones'), #todas las canciones
+   path('canciones/<int:cancion_id>', views.detailCancion, name='detailCancion'), #detalles de canciones
+
    #path('artista', views.artista, name='artista'), #todos los artistas
    #path('album', views.album, name='album'), #todos los albums
-   #path('cancion/<int:cancion_id>', views.detailCancion, name='detailCancion'), #detalles de canciones
-  
    #path('acerca', views.acerca, name= 'acerca'),
    #path('contacto', views.contacto, name = 'contacto')
     

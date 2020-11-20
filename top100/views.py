@@ -42,6 +42,11 @@ def detailEstilo(request, estilo_id):#Para ir desde los estilos al estilo
 	context = {'estilo': estilo, 'albumes' : albumes}
 	return render(request, 'detailEstilo.html', context)
 
+def detailCancion(request, cancion_id):#Para ir desde canciones a la cancion especifica
+    cancion = get_object_or_404(Cancion, pk=cancion_id)
+    context = {'cancion': cancion}
+    return render(request, 'detailCancion.html', context) #detail
+
 def eventos(request):
 	return render(request, 'eventos.html')
 
