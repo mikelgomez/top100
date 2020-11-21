@@ -59,7 +59,7 @@ def contacto(request):
 def home(request):#canciones
 	canciones = get_list_or_404(Cancion.objects.order_by('estiloCancion'))
 	estilos = get_list_or_404(Estilo.objects.order_by('nombreEstilo'))
-	context = {'lista_canciones': canciones, 'estilos':estilos }
+	context = {'canciones': canciones, 'estilos':estilos }
 	return render(request, 'home.html', context)
 
 
