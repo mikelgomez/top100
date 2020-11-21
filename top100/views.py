@@ -56,16 +56,16 @@ def equipo(request):
 def contacto(request):
 	return render(request, 'contacto.html')
 
-
+def home(request):#canciones
+	canciones = get_list_or_404(Cancion.objects.order_by('estiloCancion'))
+	estilos = get_list_or_404(Estilo.objects.order_by('nombreEstilo'))
+	context = {'lista_canciones': canciones, 'estilos':estilos }
+	return render(request, 'home.html', context)
 
 
 #def index(request):#canciones
 #	return render(request, 'index.html')
 
-#def index(request):#canciones
-#	canciones = get_list_or_404(Cancion.objects.order_by('id'))
-#	context = {'lista_canciones': canciones }
-#	return render(request, 'index.html', context)
 
 #def detailCancion(request, post_id):#Para ir desde canciones a la cancion especifica
 #    cancion = get_object_or_404(Cancion, pk=cancion_id)

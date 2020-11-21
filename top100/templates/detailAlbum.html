@@ -2,29 +2,43 @@
 {% load static %}
 {% block contenido %}
 {% if album %}
-<!-- featured abbum -->
-<div class="featured pad" id="featuredalbum">
-	<div class="container">
-		<!-- default heading -->
-		<div class="default-heading">
-			<!-- heading -->
-			<h2>{{album.nombreAlbum}}</h2>
+
+<!-- hero play list -->
+<div class="hero-playlist">
+	<div class="row">
+		<div class="col-md-6 col-sm-6">
+			<!-- music album image -->
+			<div class="figure">
+				<!-- image -->
+				<img class="img-responsive" src={{album.imagenAlbum}} alt="" width="600"/>
+			</div>
+			<!-- album details -->
+			<div class="album-details">
+				<!-- title -->
+				<h4>{{album.nombreAlbum}}</h4>
+				<!-- composed by -->
+				<h5>By <a href="/proyecto/artistas/{{album.artistaAlbum.id}}">{{album.artistaAlbum}}</a></h5>
+				<!-- paragraph -->
+				<p>{{album.descripcionAlbum}}</p>
+				<!-- button -->
+				<a href="#" class="btn btn-lg btn-theme" id="playNowBtn"><i class="fa fa-play"></i>&nbsp; POR HACER</a>
+			</div>
 		</div>
 		<!-- featured album elements -->
-		<div class="featured-element">
+		<div class="canciones-album">
 			<ul>
-                {% if canciones %}
+				{% if canciones %}
 					{% for c in canciones %}
-					    <li>{{c.numeroAlbum}}) <a href="/proyecto/canciones/{{c.id}}">{{c.nombreCancion}}</a></li>
+						<li>{{c.numeroAlbum}}) <a href="/proyecto/canciones/{{c.id}}">{{c.nombreCancion}}</a></li>
 					{% endfor %}
 				{% else %}
 					<p>No hay canciones creadas en este album.</p>
 				{% endif %}
-            </ul>
+				</ul>
 		</div>
 	</div>
+	
 </div>
-<!-- features end -->
 
 <!-- call to action -->
 <div class="cta parallax-one pad">
