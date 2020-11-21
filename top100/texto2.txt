@@ -1,0 +1,20 @@
+<!-- play list -->
+    <div class="playlist-content">
+        <ul class="list-unstyled">
+            <li class="playlist-number">
+                <!-- song information -->
+                <div class="song-info">
+                    <!-- song title -->
+                    <h4>Melodi Song Track One</h4>
+                    <p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock
+                                        &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
+                    </div>
+                                <!-- music icon -->
+                                <div class="music-icon">
+                                    <audio src ="/static/audio/audio.mp3" controls="controls"></audio>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                        </ul>
+                    </div>
+  

@@ -3,42 +3,70 @@
 {% block contenido %}
 {% if album %}
 
-<!-- hero play list -->
-<div class="hero-playlist">
-	<div class="row">
-		<div class="col-md-6 col-sm-6">
-			<!-- music album image -->
-			<div class="figure">
-				<!-- image -->
-				<img class="img-responsive" src={{album.imagenAlbum}} alt="" width="600"/>
-			</div>
-			<!-- album details -->
-			<div class="album-details">
-				<!-- title -->
-				<h4>{{album.nombreAlbum}}</h4>
-				<!-- composed by -->
-				<h5>By <a href="/proyecto/artistas/{{album.artistaAlbum.id}}">{{album.artistaAlbum}}</a></h5>
-				<!-- paragraph -->
-				<p>{{album.descripcionAlbum}}</p>
-				<!-- button -->
-				<a href="#" class="btn btn-lg btn-theme" id="playNowBtn"><i class="fa fa-play"></i>&nbsp; POR HACER</a>
-			</div>
+<!-- Hero block area -->
+<div id="latestalbum" class="hero pad">
+	<div class="container">
+		<!-- hero content -->
+		<div class="hero-content ">
+			<!-- heading -->
+			<h2>{{album.nombreAlbum}}</h2>
+			<hr>
+			<!-- paragraph ESCRIBIR-->
 		</div>
-		<!-- featured album elements -->
-		<div class="canciones-album">
-			<ul>
-				{% if canciones %}
-					{% for c in canciones %}
-						<li>{{c.numeroAlbum}}) <a href="/proyecto/canciones/{{c.id}}">{{c.nombreCancion}}</a></li>
-					{% endfor %}
-				{% else %}
-					<p>No hay canciones creadas en este album.</p>
-				{% endif %}
-				</ul>
+		<!-- hero play list -->
+		<div class="hero-playlist">
+			<div class="row">
+				<div class="col-md-6 col-sm-6">
+					<!-- music album image -->
+					<div class="figure">
+						<!-- image -->
+						<img class="img-responsive" src={{album.imagenAlbum}} alt="" />
+					</div>
+					<div class="album-details">
+						<!-- title -->
+						<h4>{{album.nombreAlbum}}</h4>
+						<!-- composed by -->
+						<h5>By <a href="/proyecto/artistas/{{album.artistaAlbum.id}}">{{album.artistaAlbum}}</a></h5>
+						<!-- paragraph -->
+						<p>{{album.descripcionAlbum}}</p>
+						<!-- button -->
+						<a href="#" class="btn btn-lg btn-theme" id="playNowBtn"><i class="fa fa-play"></i>&nbsp; POR HACER</a>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<!-- play list -->
+					<div class="playlist-content">
+						{% if canciones %}
+						<ul class="list-unstyled">
+							{% for c in canciones %}
+							<li class="playlist-number">
+								<!-- song information -->
+								<div class="song-info">
+									<!-- song title -->
+									<h4>{{c.nombreCancion}}</h4>
+									<p><strong>Album</strong>: <a href="/proyecto/albumes/{{c.albumCancion.id}}">{{c.albumCancion.nombreAlbum}}</a> &nbsp;|&nbsp; 
+										<strong>Estilo</strong>: <a href="/proyecto/estilos/{{c.estiloCancion.id}}">{{c.estiloCancion.nombreEstilo}}</a> &nbsp;|&nbsp; 
+										<strong>Artista</strong>: <a href="/proyecto/artistas/{{c.artistaCancion.id}}">{{c.artistaCancion.nombreArtista}}</a></p>
+								</div>
+								<!-- music icon -->
+								<div class="music-icon">
+									<a href="#"><i class="fa fa-play"></i></a>
+									<a href="#"><i class="fa fa-pause"></i></a>
+								</div>
+								<div class="clearfix"></div>
+							</li>
+							{% endfor %}
+						</ul>
+						{% else %}
+							<p>No hay canciones creadas en este album.</p>
+						{% endif %}
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-	
 </div>
+<!--/ hero end -->
 
 <!-- call to action -->
 <div class="cta parallax-one pad">
