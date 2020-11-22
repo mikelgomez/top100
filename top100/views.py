@@ -47,8 +47,10 @@ def detailCancion(request, cancion_id):#Para ir desde canciones a la cancion esp
     context = {'cancion': cancion}
     return render(request, 'detailCancion.html', context) #detail
 
-def eventos(request):
-	return render(request, 'eventos.html')
+def ranking(request):
+	canciones = get_list_or_404(Cancion.objects.order_by('numeroRanking'))
+	context = {'canciones': canciones}
+	return render(request, 'ranking.html', context)
 
 def equipo(request):
 	return render(request, 'equipo.html')
