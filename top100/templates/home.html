@@ -16,7 +16,6 @@
 
         {% if estilos %}
         {% for e in estilos %}
-
         <!-- hero play list -->
         <div class="hero-playlist">
             <div class="row">
@@ -39,10 +38,9 @@
                 <div class="col-md-6 col-sm-6">
 					<!-- play list -->
 					<div class="playlist-content">
-                        {% if canciones %}
+                        {% if e.id == 1 %}
 						<ul class="list-unstyled">
-                            {% for c in canciones %}
-                            {% if c.estiloCancion == e %}
+                            {% for c in lista1 %}
 							<li class="playlist-number">
 								<!-- song information -->
 								<div class="song-info">
@@ -57,14 +55,94 @@
 									<a href="#"><i class="fa fa-play"></i></a>
 									<a href="#"><i class="fa fa-pause"></i></a>
 								</div>
-								<div class="clearfix"></div>
+                                <div class="clearfix"></div>
                             </li>
-                            {% endif %}
-                            
-							{% endfor %}
+                            {% endfor %}
 						</ul>
-						{% else %}
-							<p>No hay canciones creadas en este estilo.</p>
+						{% elif e.id == 2 %}
+                        <ul class="list-unstyled">
+                            {% for c in lista2 %}
+							<li class="playlist-number">
+								<!-- song information -->
+								<div class="song-info">
+									<!-- song title -->
+									<h4>{{c.nombreCancion}}</h4>
+									<p><strong>Album</strong>: <a href="/proyecto/albumes/{{c.albumCancion.id}}">{{c.albumCancion.nombreAlbum}}</a> &nbsp;|&nbsp; 
+										<strong>Estilo</strong>: <a href="/proyecto/estilos/{{c.estiloCancion.id}}">{{c.estiloCancion.nombreEstilo}}</a> &nbsp;|&nbsp; 
+										<strong>Artista</strong>: <a href="/proyecto/artistas/{{c.artistaCancion.id}}">{{c.artistaCancion.nombreArtista}}</a></p>
+								</div>
+								<!-- music icon -->
+								<div class="music-icon">
+									<a href="#"><i class="fa fa-play"></i></a>
+									<a href="#"><i class="fa fa-pause"></i></a>
+								</div>
+                                <div class="clearfix"></div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% elif e.id == 3 %}
+                        <ul class="list-unstyled">
+                            {% for c in lista3 %}
+							<li class="playlist-number">
+								<!-- song information -->
+								<div class="song-info">
+									<!-- song title -->
+									<h4>{{c.nombreCancion}}</h4>
+									<p><strong>Album</strong>: <a href="/proyecto/albumes/{{c.albumCancion.id}}">{{c.albumCancion.nombreAlbum}}</a> &nbsp;|&nbsp; 
+										<strong>Estilo</strong>: <a href="/proyecto/estilos/{{c.estiloCancion.id}}">{{c.estiloCancion.nombreEstilo}}</a> &nbsp;|&nbsp; 
+										<strong>Artista</strong>: <a href="/proyecto/artistas/{{c.artistaCancion.id}}">{{c.artistaCancion.nombreArtista}}</a></p>
+								</div>
+								<!-- music icon -->
+								<div class="music-icon">
+									<a href="#"><i class="fa fa-play"></i></a>
+									<a href="#"><i class="fa fa-pause"></i></a>
+								</div>
+                                <div class="clearfix"></div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% elif e.id == 4 %}
+                        <ul class="list-unstyled">
+                            {% for c in lista4 %}
+							<li class="playlist-number">
+								<!-- song information -->
+								<div class="song-info">
+									<!-- song title -->
+									<h4>{{c.nombreCancion}}</h4>
+									<p><strong>Album</strong>: <a href="/proyecto/albumes/{{c.albumCancion.id}}">{{c.albumCancion.nombreAlbum}}</a> &nbsp;|&nbsp; 
+										<strong>Estilo</strong>: <a href="/proyecto/estilos/{{c.estiloCancion.id}}">{{c.estiloCancion.nombreEstilo}}</a> &nbsp;|&nbsp; 
+										<strong>Artista</strong>: <a href="/proyecto/artistas/{{c.artistaCancion.id}}">{{c.artistaCancion.nombreArtista}}</a></p>
+								</div>
+								<!-- music icon -->
+								<div class="music-icon">
+									<a href="#"><i class="fa fa-play"></i></a>
+									<a href="#"><i class="fa fa-pause"></i></a>
+								</div>
+                                <div class="clearfix"></div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% elif e.id == 5 %}
+                        <ul class="list-unstyled">
+                            {% for c in lista5 %}
+							<li class="playlist-number">
+								<!-- song information -->
+								<div class="song-info">
+									<!-- song title -->
+									<h4>{{c.nombreCancion}}</h4>
+									<p><strong>Album</strong>: <a href="/proyecto/albumes/{{c.albumCancion.id}}">{{c.albumCancion.nombreAlbum}}</a> &nbsp;|&nbsp; 
+										<strong>Estilo</strong>: <a href="/proyecto/estilos/{{c.estiloCancion.id}}">{{c.estiloCancion.nombreEstilo}}</a> &nbsp;|&nbsp; 
+										<strong>Artista</strong>: <a href="/proyecto/artistas/{{c.artistaCancion.id}}">{{c.artistaCancion.nombreArtista}}</a></p>
+								</div>
+								<!-- music icon -->
+								<div class="music-icon">
+									<a href="#"><i class="fa fa-play"></i></a>
+									<a href="#"><i class="fa fa-pause"></i></a>
+								</div>
+                                <div class="clearfix"></div>
+                            </li>
+                            {% endfor %}
+						</ul>
 						{% endif %}
 					</div>
 				</div>
