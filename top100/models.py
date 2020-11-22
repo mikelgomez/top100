@@ -30,10 +30,11 @@ class Album(models.Model):
 class Cancion(models.Model):
     nombreCancion = models.CharField(max_length = 50)
     videoCancion = models.CharField(max_length = 300)#Al entrar en carac. saque un video de esa cancion
-    numeroAlbum = models.IntegerField(default=0)
+    numeroRanking = models.IntegerField(default=0)
     albumCancion = models.ForeignKey(Album, on_delete=models.CASCADE)
     estiloCancion = models.ForeignKey(Estilo, on_delete=models.CASCADE)
     artistaCancion = models.ForeignKey(Artista, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.nombreCancion
+        cadena = str(self.numeroRanking)+') '+self.nombreCancion
+        return cadena

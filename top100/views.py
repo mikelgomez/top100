@@ -15,7 +15,7 @@ def albumes(request):
 
 def detailAlbum(request, album_id):#Para ir desde los albums al album
 	album = get_object_or_404(Album, pk=album_id)
-	canciones = get_list_or_404(Cancion.objects.order_by('numeroAlbum'), albumCancion=album)
+	canciones = get_list_or_404(Cancion.objects.order_by('numeroRanking'), albumCancion=album)
 	context = {'album': album, 'canciones' : canciones}
 	return render(request, 'detailAlbum.html', context)
 
@@ -59,7 +59,7 @@ def contacto(request):
 def home(request):#canciones
 	canciones = get_list_or_404(Cancion.objects.order_by('estiloCancion'))
 	estilos = get_list_or_404(Estilo.objects.order_by('nombreEstilo'))
-	l1 = get_list_or_404(Cancion.objects.filter(estiloCancion = 1))[:2:1]
+	l1 = get_list_or_404(Cancion.objects.order_by('numeroRanking').filter(estiloCancion = 1))[:2:1]
 	l2 = get_list_or_404(Cancion.objects.filter(estiloCancion = 2))[:2:1]
 	l3 = get_list_or_404(Cancion.objects.filter(estiloCancion = 3))[:2:1]
 	l4 = get_list_or_404(Cancion.objects.filter(estiloCancion = 4))[:2:1]
