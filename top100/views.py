@@ -62,10 +62,10 @@ def home(request):#canciones
 	canciones = get_list_or_404(Cancion.objects.order_by('estiloCancion'))
 	estilos = get_list_or_404(Estilo.objects.order_by('nombreEstilo'))
 	l1 = get_list_or_404(Cancion.objects.order_by('numeroRanking').filter(estiloCancion = 1))[:2:1]
-	l2 = get_list_or_404(Cancion.objects.filter(estiloCancion = 2))[:2:1]
-	l3 = get_list_or_404(Cancion.objects.filter(estiloCancion = 3))[:2:1]
-	l4 = get_list_or_404(Cancion.objects.filter(estiloCancion = 4))[:2:1]
-	l5 = get_list_or_404(Cancion.objects.filter(estiloCancion = 5))[:2:1]
+	l2 = get_list_or_404(Cancion.objects.order_by('numeroRanking').filter(estiloCancion = 2))[:2:1]
+	l3 = get_list_or_404(Cancion.objects.order_by('numeroRanking').filter(estiloCancion = 3))[:2:1]
+	l4 = get_list_or_404(Cancion.objects.order_by('numeroRanking').filter(estiloCancion = 4))[:2:1]
+	l5 = get_list_or_404(Cancion.objects.order_by('numeroRanking').filter(estiloCancion = 5))[:2:1]
 	context = {'canciones': canciones, 'estilos':estilos, 'lista1': l1, 'lista2': l2, 'lista3': l3, 'lista4': l4, 'lista5': l5}
 	return render(request, 'home.html', context)
 

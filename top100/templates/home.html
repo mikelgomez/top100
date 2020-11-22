@@ -10,7 +10,7 @@
             <h2>Ultimas Canciones</h2>
             <hr>
             <!-- paragraph -->
-            <p>Tenemos las mejores <strong class="theme-color">canciones</strong> y los mejores <strong
+            <p>Tenemos las mejores <strong class="theme-color"><a href="/proyecto/ranking">canciones</a></strong> y los mejores <strong
                     class="theme-color"><a href="/proyecto/albumes">artistas</a></strong>.</p>
         </div>
 
@@ -30,7 +30,7 @@
                         <!-- title -->
                         <h4><a href="/proyecto/estilos/{{e.id}}">{{e.nombreEstilo}}</a></h4>
                         <!-- paragraph -->
-                        <p>Aqui igual un texto</p>
+                        <p>{{e.descripcionEstilo}}</p>
                         <!-- button -->
                         <a href="#" class="btn btn-lg btn-theme" id="playNowBtn"><i class="fa fa-play"></i>&nbsp; Aqui algo</a>
                     </div>

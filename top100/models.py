@@ -13,6 +13,7 @@ class Artista(models.Model):
 class Estilo(models.Model):
     nombreEstilo = models.CharField(max_length = 50)
     imagenEstilo = models.CharField(max_length = 200)
+    descripcionEstilo = models.TextField(null = True)
 
     def __str__(self):
         return self.nombreEstilo

@@ -29,12 +29,14 @@
 							<div class="featured-item-info">
 								<!-- featured title -->
 								<h4><a href="/proyecto/estilos/{{e.id}}">{{e.nombreEstilo}}</a></h4>
+								<hr />
+								<p>{{e.descripcionEstilo}}</p>
 							</div>
 						</div>
 					</div>
 					{% endfor %}
 				{% else %}
-					<p>No hay albumes creados.</p>
+					<p>No hay estilos creados.</p>
 				{% endif %}
 			</div>
 		</div>
