@@ -101,27 +101,6 @@
                             </li>
                             {% endfor %}
                         </ul>
-                        {% elif e.id == 4 %}
-                        <ul class="list-unstyled">
-                            {% for c in lista4 %}
-							<li class="playlist-number">
-								<!-- song information -->
-								<div class="song-info">
-									<!-- song title -->
-									<h4><a href="/proyecto/canciones/{{c.id}}">{{c.nombreCancion}}</a></h4>
-									<p><strong>Album</strong>: <a href="/proyecto/albumes/{{c.albumCancion.id}}">{{c.albumCancion.nombreAlbum}}</a> &nbsp;|&nbsp; 
-										<strong>Estilo</strong>: <a href="/proyecto/estilos/{{c.estiloCancion.id}}">{{c.estiloCancion.nombreEstilo}}</a> &nbsp;|&nbsp; 
-										<strong>Artista</strong>: <a href="/proyecto/artistas/{{c.artistaCancion.id}}">{{c.artistaCancion.nombreArtista}}</a></p>
-								</div>
-								<!-- music icon -->
-								<div class="music-icon">
-									<a href="#"><i class="fa fa-play"></i></a>
-									<a href="#"><i class="fa fa-pause"></i></a>
-								</div>
-                                <div class="clearfix"></div>
-                            </li>
-                            {% endfor %}
-                        </ul>
                         {% elif e.id == 5 %}
                         <ul class="list-unstyled">
                             {% for c in lista5 %}
@@ -144,6 +123,7 @@
                             {% endfor %}
 						</ul>
 						{% endif %}
+                        
 					</div>
 				</div>
                 
