@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, get_list_or_404
 from .models import Artista, Album, Estilo, Cancion
+from .forms import MyForm
 
 
 def index(request):
@@ -70,6 +71,22 @@ def home(request):#canciones
 	return render(request, 'home.html', context)
 
 
+def loginform(request):
+ form = MyForm()
+ return render(
+ request, 'contacto.html', {'form':form}
+ )
+def get_name(request):
+	if request.method == 'POST':
+		form = MyForm(request.POST)
+		if form.is_valid():
+			nombre = form.cleaned_data['nombre']   
+			email = form.cleaned_data['email']
+			mensaje=form.cleaned_data['mensaje']
+			return HttpResponseRedirect('/dashboard/')
+	else:
+		form = NameForm()
+	return render(request, 'Contacto.html', {'form': form})
 #def detailCancion(request, post_id):#Para ir desde canciones a la cancion especifica
 #    cancion = get_object_or_404(Cancion, pk=cancion_id)
 #    context = {'cancion': cancion}
