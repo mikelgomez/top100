@@ -12,7 +12,7 @@ urlpatterns = [
    path('ranking/', views.ranking, name='ranking'),#ranking
    path('equipo/', views.equipo, name='equipo'),
    path('contacto/', views.contacto, name='contacto'),
-   path('canciones/', views.index, name='canciones'), #todas las canciones
+   path('canciones/', views.home, name='canciones'), #todas las canciones
    path('canciones/<int:cancion_id>', views.detailCancion, name='detailCancion'), #detalles de canciones
 
    #path('artista', views.artista, name='artista'), #todos los artistas
