@@ -114,6 +114,7 @@ LANGUAGES = (
  ('es-es', _('Español')),
  ('en-us', _('Ingles')),
  ('fr', _('Frances')),
+ ('eu', _('Euskera')),
 )
 
 TIME_ZONE = 'UTC'
