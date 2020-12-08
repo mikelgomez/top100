@@ -16,7 +16,6 @@ urlpatterns = [
    path('canciones/<int:cancion_id>', views.detailCancion, name='detailCancion'), #detalles de canciones
 
     path('i18n/', include('django.conf.urls.i18n')),
-    path('idiomas/', views.idiomas),
 
    #path('artista', views.artista, name='artista'), #todos los artistas
    #path('album', views.album, name='album'), #todos los albums

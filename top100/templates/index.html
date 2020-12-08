@@ -55,22 +55,23 @@
 								<a class="h-linkedin" href="https://es.linkedin.com/"><i class="fa fa-linkedin"></i></a>-->
 								<form action="{% url 'set_language' %}" method="post">  {#2#}
 									{% csrf_token %}  {#3#}
-									<select name="language">  {#4#}
+									<select name="language" style="color: black;">  {#4#}
 										{% get_current_language as LANGUAGE_CODE %}  {#5#}
 										{% get_available_languages as LANGUAGES %}  {#6#}
 										{% get_language_info_list for LANGUAGES as languages %}  {#7#}
 										{% for language in languages %}
-											<option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>  {#8#}
+											<option style="color:black;text-align:center;" value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>  {#8#}
 												{{ language.name_local }} ({{ language.code }})
 											</option>
 										{% endfor %}
 									</select>
-									<input type="submit" value="Switch">  {#9#}
+									<input style="color:black;text-align:center;" type="submit" value="Switch">  {#9#}
 								</form>
+
 								<!--
-								<a class="español" href="{% url 'set_language' %}"><img class="español" src="{% static 'img/inter/spain.png'%}" alt="" width="20"/></a>
-								<a class="ingles" href="{% url 'set_language' %}"><img class="ingles" src="{% static 'img/inter/ingles.png'%}" alt=""  width="20"/></a>
-								<a class="frances" href="{% url 'set_language' %}"><img class="frances" src="{% static 'img/inter/frances.png'%}" alt=""  width="20" /></a>
+								<a class="español" href="{% url 'set_language' %}" value="es"{% if es == LANGUAGE_CODE %} selected{% endif %}><img class="español" src="{% static 'img/inter/spain.png'%}" alt="" width="20"/></a>
+								<a class="ingles" href="{% url 'set_language' %}" value="en"{% if en == LANGUAGE_CODE %} selected{% endif %}><img class="ingles" src="{% static 'img/inter/ingles.png'%}" alt=""  width="20"/></a>
+								<a class="frances" href="{% url 'set_language' %}" value="fr"{% if fr == LANGUAGE_CODE %} selected{% endif %}><img class="frances" src="{% static 'img/inter/frances.png'%}" alt=""  width="20" /></a>
 								-->
 							</div>
 						</div>
