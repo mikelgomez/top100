@@ -90,6 +90,9 @@ def get_name(request):
 	else:
 		form = NameForm()
 	return render(request, 'Contacto.html', {'form': form})
+
+def idiomas(request):
+	return render(request, 'idiomas.html')
 #def detailCancion(request, post_id):#Para ir desde canciones a la cancion especifica
 #    cancion = get_object_or_404(Cancion, pk=cancion_id)
 #    context = {'cancion': cancion}

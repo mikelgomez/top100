@@ -1,5 +1,6 @@
 {% extends "index.html" %}
 {% load static %}
+{% load i18n %} {#1#}
 {% block contenido %}
 
 <div id="latestalbum" class="hero pad">
@@ -7,11 +8,11 @@
         <!-- hero content -->
         <div class="hero-content ">
             <!-- heading -->
-            <h2>Ultimas Canciones</h2>
+            <h2>{% trans "Últimas Canciones" %}</h2>
             <hr>
             <!-- paragraph -->
-            <p>Tenemos las mejores <strong class="theme-color"><a href="/proyecto/ranking">canciones</a></strong> y los mejores <strong
-                    class="theme-color"><a href="/proyecto/albumes">artistas</a></strong>.</p>
+            <p>{% trans "Tenemos las mejores" %} <strong class="theme-color"><a href="/proyecto/ranking">{% trans "canciones" %}</a></strong>{% trans " y los mejores " %}<strong
+                class="theme-color"><a href="/proyecto/albumes">{% trans "artistas" %}</a></strong>.</p>
         </div>
 
         {% if estilos %}
@@ -70,6 +71,9 @@
 			<p>No hay estilos creados</p>
 		{% endif %}
     </div>
+    
 </div>
+
+
 
 {% endblock %}

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -29,50 +31,6 @@
 	</head>
 	
 	<body>
-		<!-- modal for booking ticket form -->
-		<!--<div class="modal fade" id="bookTicket" tabindex="-1" role="dialog" aria-labelledby="BookTicket">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="myModalLabel">Name of The Event &nbsp; <small><span class="label label-success">Available</span> &nbsp; <span class="label label-danger">Not Available</span></small></h4>
-					</div>
-					form for events ticket booking 
-					<form>
-						<div class="modal-body">
-							<div class="form-group">
-								<label for="exampleInputEmail1">Email</label>
-								<input type="email" class="form-control" id="exampleInputEmail1" placeholder="example@mail.com">
-							</div>
-							<div class="form-group">
-								<label for="exampleInputContact">Contact</label>
-								<input type="text" class="form-control" id="exampleInputContact" placeholder="+91 55 5555 5555">
-							</div>
-							<div class="form-group">
-								<label for="exampleInputSeats">Number of Tickets</label>
-								<select class="form-control" id="exampleInputSeats">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-								</select>
-							</div>
-							<div class="checkbox">
-								<label>
-									<input type="checkbox"> I accept the Terms of Service
-								</label>
-							</div>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							link to payment gatway here 
-							<button type="button" class="btn btn-primary">Book Now</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div> -->
 		
 		<!-- wrapper -->
 		<div class="wrapper" id="home">
@@ -91,10 +49,29 @@
 						<div class="sm-right">
 							<!-- social link -->
 							<div class="sm-social-link">
-								<a class="h-facebook" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+								<!--<a class="h-facebook" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
 								<a class="h-twitter" href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>
 								<a class="h-google" href="https://www.google.com/"><i class="fa fa-google-plus"></i></a>
-								<a class="h-linkedin" href="https://es.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+								<a class="h-linkedin" href="https://es.linkedin.com/"><i class="fa fa-linkedin"></i></a>-->
+								<form action="{% url 'set_language' %}" method="post">  {#2#}
+									{% csrf_token %}  {#3#}
+									<select name="language">  {#4#}
+										{% get_current_language as LANGUAGE_CODE %}  {#5#}
+										{% get_available_languages as LANGUAGES %}  {#6#}
+										{% get_language_info_list for LANGUAGES as languages %}  {#7#}
+										{% for language in languages %}
+											<option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>  {#8#}
+												{{ language.name_local }} ({{ language.code }})
+											</option>
+										{% endfor %}
+									</select>
+									<input type="submit" value="Switch">  {#9#}
+								</form>
+								<!--
+								<a class="español" href="{% url 'set_language' %}"><img class="español" src="{% static 'img/inter/spain.png'%}" alt="" width="20"/></a>
+								<a class="ingles" href="{% url 'set_language' %}"><img class="ingles" src="{% static 'img/inter/ingles.png'%}" alt=""  width="20"/></a>
+								<a class="frances" href="{% url 'set_language' %}"><img class="frances" src="{% static 'img/inter/frances.png'%}" alt=""  width="20" /></a>
+								-->
 							</div>
 						</div>
 						<div class="clearfix"></div>
@@ -121,13 +98,13 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="/proyecto">Home</a></li>
-								<li><a href="/proyecto/albumes">Albumes</a></li>
-								<li><a href="/proyecto/artistas">Artistas</a></li>
-								<li><a href="/proyecto/estilos">Estilos</a></li>
-								<li><a href="/proyecto/ranking">Ranking</a></li>
-								<li><a href="/proyecto/equipo">Team</a></li>
-								<li><a href="/proyecto/contacto">Contact</a></li>
+								<li><a href="/proyecto">{% trans "Inicio" %}</a></li>
+								<li><a href="/proyecto/albumes">{% trans "Álbumes" %}</a></li>
+								<li><a href="/proyecto/artistas">{% trans "Artistas" %}</a></li>
+								<li><a href="/proyecto/estilos">{% trans "Estilos" %}</a></li>
+								<li><a href="/proyecto/ranking">{% trans "Ranking" %}</a></li>
+								<li><a href="/proyecto/equipo">{% trans "Equipo" %}</a></li>
+								<li><a href="/proyecto/contacto">{% trans "Contacto" %}</a></li>
 							</ul>
 						</div><!-- /.navbar-collapse -->
 					</div><!-- /.container-fluid -->
@@ -146,11 +123,11 @@
 								<!-- banner caption -->
 								<div class="carousel-caption slide-one">
 									<!-- heading -->
-									<h2 class="animated fadeInLeftBig"><i class="fa fa-music"></i>Top100 global</h2>
+									<h2 class="animated fadeInLeftBig"><i class="fa fa-music"></i>{% trans "Top100 global" %}</h2>
 									<!-- paragraph -->
-									<h3 class="animated fadeInRightBig">Descubre la mejor musica</h3>
+									<h3 class="animated fadeInRightBig">{% trans "Descubre la mejor música" %}</h3>
 									<!-- button -->
-									<a href="/proyecto/albumes" class="animated fadeIn btn btn-theme">Descubre mas</a>
+									<a href="/proyecto/albumes" class="animated fadeIn btn btn-theme">{% trans "Descubre mas" %}</a>
 								</div>
 							</div>
 						</div>
@@ -160,11 +137,11 @@
 								<!-- banner caption -->
 								<div class="carousel-caption slide-two">
 									<!-- heading -->
-									<h2 class="animated fadeInLeftBig"><i class="fa fa-headphones"></i>Los mejores artistas</h2>
+									<h2 class="animated fadeInLeftBig"><i class="fa fa-headphones"></i>{% trans "Los mejores artistas" %}</h2>
 									<!-- paragraph -->
-									<h3 class="animated fadeInRightBig">Descubrelos hoy mismo</h3>
+									<h3 class="animated fadeInRightBig">{% trans "Descúbrelos hoy mismo" %}</h3>
 									<!-- button -->
-									<a href="/proyecto/artistas/" class="animated fadeIn btn btn-theme">Descubre mas</a>
+									<a href="/proyecto/artistas/" class="animated fadeIn btn btn-theme">{% trans "Descubre mas" %}</a>
 								</div>
 							</div>
 						</div>

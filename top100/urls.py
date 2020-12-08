@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import include, path
 from . import views
 
 urlpatterns = [
@@ -14,6 +14,9 @@ urlpatterns = [
    path('contacto/', views.contacto, name='contacto'),
    path('canciones/', views.home, name='canciones'), #todas las canciones
    path('canciones/<int:cancion_id>', views.detailCancion, name='detailCancion'), #detalles de canciones
+
+    path('i18n/', include('django.conf.urls.i18n')),
+    path('idiomas/', views.idiomas),
 
    #path('artista', views.artista, name='artista'), #todos los artistas
    #path('album', views.album, name='album'), #todos los albums

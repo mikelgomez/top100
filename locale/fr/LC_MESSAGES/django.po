@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-08 00:53+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\proyecto\settings.py:116
+msgid "Frances"
+msgstr "Français"
+
+#: .\top100\templates\home.html:11
+msgid "Últimas Canciones"
+msgstr "Dernières chansons"
+
+#: .\top100\templates\home.html:14
+msgid "Tenemos las mejores"
+msgstr "Nous avons le meilleur"
+
+#: .\top100\templates\home.html:14
+msgid "canciones"
+msgstr "chansons"
+
+#: .\top100\templates\home.html:14
+msgid " y los mejores "
+msgstr " et le meilleur "
+
+#: .\top100\templates\home.html:15
+msgid "artistas"
+msgstr "artistes"
+
+#: .\top100\templates\index.html:101
+msgid "Inicio"
+msgstr "Début"
+
+#: .\top100\templates\index.html:102
+msgid "Álbumes"
+msgstr "Les albums"
+
+#: .\top100\templates\index.html:103
+msgid "Artistas"
+msgstr "Artistes"
+
+#: .\top100\templates\index.html:104
+msgid "Estilos"
+msgstr "Modes"
+
+#: .\top100\templates\index.html:105
+msgid "Ranking"
+msgstr "Classement"
+
+#: .\top100\templates\index.html:106
+msgid "Equipo"
+msgstr "Équipe"
+
+#: .\top100\templates\index.html:107
+msgid "Contacto"
+msgstr "Contact"
+
+#: .\top100\templates\index.html:126
+msgid "Top100 global"
+msgstr "Top100 mondial"
+
+#: .\top100\templates\index.html:128
+msgid "Descubre la mejor música"
+msgstr "Découvrez la meilleure musique"
+
+#: .\top100\templates\index.html:130 .\top100\templates\index.html:144
+msgid "Descubre mas"
+msgstr "En savoir plus"
+
+#: .\top100\templates\index.html:140
+msgid "Los mejores artistas"
+msgstr "Les meilleurs artistes"
+
+#: .\top100\templates\index.html:142
+msgid "Descúbrelos hoy mismo"
+msgstr "Découvrez-les aujourd'hui"
