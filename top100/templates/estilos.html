@@ -1,5 +1,7 @@
 {% extends "index.html" %}
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 {% block contenido %}
 
 <!-- albumes -->
@@ -8,7 +10,7 @@
 		<!-- default heading -->
 		<div class="default-heading">
 			<!-- heading -->
-			<h2>Nuestros Estilos</h2>
+			<h2>{% trans "NUESTROS ESTILOS" %}</h2>
 		</div>
 		<!-- featured album elements -->
 		<div class="featured-element">

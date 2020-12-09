@@ -1,5 +1,7 @@
 {% extends "index.html" %}
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 {% block contenido %}
 
 <div id="latestalbum" class="hero pad">
@@ -10,7 +12,7 @@
             <h2>TOP 100</h2>
             <hr>
             <!-- paragraph -->
-            <p>Aqui encontraras las mejores canciones.</p>
+            <p>{% trans "Aquí encontrarás las mejores canciones" %}</p>
         </div>
 
         <!-- hero play list -->

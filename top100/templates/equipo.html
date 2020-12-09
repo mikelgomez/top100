@@ -1,11 +1,13 @@
 {% extends "index.html" %}
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 {% block contenido %}
 
 <div class="about" id="team">
     <div class="default-heading">
         <!-- heading -->
-        <h2>Quienes somos?</h2>
+        <h2>{% trans "¿QUIENES SOMOS?" %}</h2>
     </div>
     <!-- our team -->
     <div class="team">

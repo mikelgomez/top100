@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-08 01:04+0100\n"
+"POT-Creation-Date: 2020-12-10 00:10+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,6 +30,30 @@ msgstr ""
 msgid "Frances"
 msgstr "Français"
 
+#: .\proyecto\settings.py:117
+msgid "Euskera"
+msgstr ""
+
+#: .\top100\templates\albumes.html:13
+msgid "NUESTROS ALBUMES"
+msgstr "NOS ALBUMS"
+
+#: .\top100\templates\artistas.html:13
+msgid "NUESTROS ARTISTAS"
+msgstr "NOS ARTISTES"
+
+#: .\top100\templates\contacto.html:12
+msgid "CONTACTANOS"
+msgstr "NOUS CONTACTER"
+
+#: .\top100\templates\equipo.html:10
+msgid "¿QUIENES SOMOS?"
+msgstr "QUI SOMMES NOUS?"
+
+#: .\top100\templates\estilos.html:13
+msgid "NUESTROS ESTILOS"
+msgstr "NOS STYLES"
+
 #: .\top100\templates\home.html:11
 msgid "Últimas Canciones"
 msgstr "Dernières chansons"
@@ -50,50 +74,54 @@ msgstr " et le meilleur "
 msgid "artistas"
 msgstr "artistes"
 
-#: .\top100\templates\index.html:101
+#: .\top100\templates\index.html:102
 msgid "Inicio"
 msgstr "Début"
 
-#: .\top100\templates\index.html:102
+#: .\top100\templates\index.html:103
 msgid "Álbumes"
 msgstr "Les albums"
 
-#: .\top100\templates\index.html:103
+#: .\top100\templates\index.html:104
 msgid "Artistas"
 msgstr "Artistes"
 
-#: .\top100\templates\index.html:104
+#: .\top100\templates\index.html:105
 msgid "Estilos"
 msgstr "Modes"
 
-#: .\top100\templates\index.html:105
+#: .\top100\templates\index.html:106
 msgid "Ranking"
 msgstr "Classement"
 
-#: .\top100\templates\index.html:106
+#: .\top100\templates\index.html:107
 msgid "Equipo"
 msgstr "Équipe"
 
-#: .\top100\templates\index.html:107
+#: .\top100\templates\index.html:108
 msgid "Contacto"
 msgstr "Contact"
 
-#: .\top100\templates\index.html:126
+#: .\top100\templates\index.html:127
 msgid "Top100 global"
 msgstr "Top100 mondial"
 
-#: .\top100\templates\index.html:128
+#: .\top100\templates\index.html:129
 msgid "Descubre la mejor música"
 msgstr "Découvrez la meilleure musique"
 
-#: .\top100\templates\index.html:130 .\top100\templates\index.html:144
+#: .\top100\templates\index.html:131 .\top100\templates\index.html:145
 msgid "Descubre mas"
 msgstr "En savoir plus"
 
-#: .\top100\templates\index.html:140
+#: .\top100\templates\index.html:141
 msgid "Los mejores artistas"
 msgstr "Les meilleurs artistes"
 
-#: .\top100\templates\index.html:142
+#: .\top100\templates\index.html:143
 msgid "Descúbrelos hoy mismo"
 msgstr "Découvrez-les aujourd'hui"
+
+#: .\top100\templates\ranking.html:15
+msgid "Aquí encontrarás las mejores canciones"
+msgstr "Ici vous trouverez les meilleures chansons"
