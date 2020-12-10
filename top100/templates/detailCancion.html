@@ -1,5 +1,7 @@
 {% extends "index.html" %}
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 {% block contenido %}
 {% if cancion %}
 <!-- featured abbum -->
@@ -27,7 +29,7 @@
 							<div class="featured-item-info">
 								<!-- featured title -->
 								<h4><a href="/proyecto/artistas/{{a.id}}">{{cancion.artistaCancion.nombreArtista}}</a></h4>
-                                <p>Artista</p>
+                                <p>{% trans "Artista" %}</p>
                                 <!-- horizontal line -->
 								<hr />
 								<!-- some responce from social medial or web likes -->
@@ -48,7 +50,7 @@
 							<div class="featured-item-info">
 								<!-- featured title -->
 								<h4><a href="/proyecto/albumes/{{cancion.albumCancion.id}}">{{cancion.albumCancion.nombreAlbum}}</a></h4>
-                                <p>Album</p>
+                                <p>{% trans "Álbum" %}</p>
                                 <!-- horizontal line -->
 								<hr />
 								<!-- some responce from social medial or web likes -->
@@ -69,7 +71,7 @@
 							<div class="featured-item-info">
 								<!-- featured title -->
 								<h4><a href="/proyecto/estilos/{{cancion.estiloCancion.id}}">{{cancion.estiloCancion.nombreEstilo}}</a></h4>
-                                <p>Estilo</p>
+                                <p>{% trans "Estilo" %}</p>
                                 <!-- horizontal line -->
 								<hr />
 								<!-- some responce from social medial or web likes -->

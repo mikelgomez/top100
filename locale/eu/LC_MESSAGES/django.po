@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-10 00:10+0100\n"
+"POT-Creation-Date: 2020-12-10 17:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,6 +38,18 @@ msgstr ""
 msgid "NUESTROS ALBUMES"
 msgstr "GURE ALBUMAK"
 
+#: .\top100\templates\albumes.html:37 .\top100\templates\detailAlbum.html:47
+#: .\top100\templates\detailCancion.html:30
+#: .\top100\templates\detailEstilo.html:32 .\top100\templates\ranking.html:51
+msgid "Artista"
+msgstr "Artista"
+
+#: .\top100\templates\albumes.html:38 .\top100\templates\detailAlbum.html:46
+#: .\top100\templates\detailArtista.html:32
+#: .\top100\templates\detailCancion.html:72 .\top100\templates\ranking.html:50
+msgid "Estilo"
+msgstr "Estiloa"
+
 #: .\top100\templates\artistas.html:13
 msgid "NUESTROS ARTISTAS"
 msgstr "GURE ARTISTAK"
@@ -46,9 +58,52 @@ msgstr "GURE ARTISTAK"
 msgid "CONTACTANOS"
 msgstr "HARREMANETAN JARRI"
 
+#: .\top100\templates\detailAlbum.html:45
+#: .\top100\templates\detailCancion.html:51 .\top100\templates\ranking.html:49
+msgid "Álbum"
+msgstr "Albuma"
+
 #: .\top100\templates\equipo.html:10
 msgid "¿QUIENES SOMOS?"
 msgstr "NOR GARA?"
+
+#: .\top100\templates\equipo.html:27
+msgid ""
+"Diseñador Web y especialista en el lenguaje Java. Fundador de la página web "
+"y profesional especialista en analítica web"
+msgstr ""
+"Web diseinatzailea eta Java hizkuntzan espezialista. Webgunearen sortzailea "
+"eta web analitikan espezialista profesionala"
+
+#: .\top100\templates\equipo.html:32 .\top100\templates\equipo.html:49
+#: .\top100\templates\equipo.html:66 .\top100\templates\equipo.html:83
+msgid "Diseñador Web"
+msgstr "Web Diseinatzailea"
+
+#: .\top100\templates\equipo.html:44
+msgid ""
+"Diseñador Web especializado en Python y diseñador gráfico freelance. "
+"Apasionado del Marketing de la creación de páginas web funcionales."
+msgstr ""
+"Web diseinatzailea Python eta freelance diseinatzaile grafikoan "
+"espezializatua. Marketinaz eta web orrialde funtzionalak sortzeaz arduratzen "
+"da."
+
+#: .\top100\templates\equipo.html:61
+msgid ""
+"Diseñador web licenciado en telecomunicaciones y especialista en "
+"programación en JavaScript"
+msgstr ""
+"Web diseinatzailea telekomunikazioetan lizentziatua eta JavaScript "
+"programazioan espezialista"
+
+#: .\top100\templates\equipo.html:78
+msgid ""
+"Diseñador web especialista en telemarketing y licenciado en Comunicación y "
+"Dirección de proyectos web"
+msgstr ""
+"Telemarketingean espezializatutako web diseinatzailea eta web proiektuen "
+"komunikazio eta kudeaketan lizentziatua"
 
 #: .\top100\templates\estilos.html:13
 msgid "NUESTROS ESTILOS"
@@ -125,3 +180,15 @@ msgstr "Gaur ezagutu itzazu"
 #: .\top100\templates\ranking.html:15
 msgid "Aquí encontrarás las mejores canciones"
 msgstr "Hemen abesti hoberenak aurkituko dituzu"
+
+#: .\top100\templates\ranking.html:30
+msgid "LISTA TOP100"
+msgstr "TOP 100 ZERRENDA"
+
+#: .\top100\templates\ranking.html:32
+msgid ""
+"En esta lista encontraras todas las canciones que se encuentran en el top "
+"100 de canciones."
+msgstr ""
+"Zerrenda honetan 100 abesti onenen artean dauden abesti guztiak aurkituko "
+"dituzu."

@@ -27,9 +27,9 @@
                     <!-- album details -->
                     <div class="album-details">
                         <!-- title -->
-                        <h4><a href="#">LISTA TOP100</a></h4>
+                        <h4><a href="#">{% trans "LISTA TOP100" %}</a></h4>
                         <!-- paragraph -->
-                        <p>En esta lista encontraras todas las canciones que se encuentran en el top 100 de canciones.</p>
+                        <p>{% trans "En esta lista encontraras todas las canciones que se encuentran en el top 100 de canciones." %}</p>
                         
                     </div>
                 </div>
@@ -46,9 +46,9 @@
                                     <!-- titulo cancion -->
 									<h4><u><a style= "color:black" href="/proyecto/canciones/{{c.id}}">{{c.nombreCancion}}</a></u></h4>
                                     <!-- detalles cancion -->
-                                    <p style= "color:blue"><strong>Album</strong>: <a style= "color:black" href="/proyecto/albumes/{{c.albumCancion.id}}">{{c.albumCancion.nombreAlbum}}</a> &nbsp;|&nbsp; 
-										<strong>Estilo</strong>: <a style= "color:black" href="/proyecto/estilos/{{c.estiloCancion.id}}">{{c.estiloCancion.nombreEstilo}}</a> &nbsp;|&nbsp; 
-										<strong>Artista</strong>: <a style= "color:black" href="/proyecto/artistas/{{c.artistaCancion.id}}">{{c.artistaCancion.nombreArtista}}</a></p>
+                                    <p style= "color:blue"><strong>{% trans "Álbum" %}</strong>: <a style= "color:black" href="/proyecto/albumes/{{c.albumCancion.id}}">{{c.albumCancion.nombreAlbum}}</a> &nbsp;|&nbsp; 
+										<strong>{% trans "Estilo" %}</strong>: <a style= "color:black" href="/proyecto/estilos/{{c.estiloCancion.id}}">{{c.estiloCancion.nombreEstilo}}</a> &nbsp;|&nbsp; 
+										<strong>{% trans "Artista" %}</strong>: <a style= "color:black" href="/proyecto/artistas/{{c.artistaCancion.id}}">{{c.artistaCancion.nombreArtista}}</a></p>
 								</div>
 								<!-- music icon -->
 								<div class="music-icon">

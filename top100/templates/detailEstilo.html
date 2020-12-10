@@ -1,4 +1,6 @@
 {% extends "index.html" %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 {% load static %}
 {% block contenido %}
 {% if estilo %}
@@ -29,7 +31,7 @@
 							<div class="featured-item-info">
 								<!-- featured title -->
 								<h4><a href="/proyecto/albumes/{{a.id}}">{{a.nombreAlbum}}</a></h4>
-								<p>Artista: <a href="/proyecto/artistas/{{a.artistaAlbum.id}}">{{a.artistaAlbum}}<!--</a> --> </p>
+								<p>{% trans "Artista" %}: <a href="/proyecto/artistas/{{a.artistaAlbum.id}}">{{a.artistaAlbum}}<!--</a> --> </p>
 								<!-- horizontal line -->
 								<hr />
 							</div>

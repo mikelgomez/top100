@@ -1,5 +1,7 @@
 {% extends "index.html" %}
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 {% block contenido %}
 {% if album %}
 
@@ -42,9 +44,9 @@
 								<div class="song-info">
 									<!-- song title -->
 									<h4><u><a style="color: black" href="/proyecto/canciones/{{c.id}}">{{c.nombreCancion}}</a></u></h4>
-									<p style="color: blue"><strong>Album</strong>: <a style="color: black" href="/proyecto/albumes/{{c.albumCancion.id}}">{{c.albumCancion.nombreAlbum}}</a> &nbsp;|&nbsp; 
-										<strong>Estilo</strong>: <a style="color: black" href="/proyecto/estilos/{{c.estiloCancion.id}}">{{c.estiloCancion.nombreEstilo}}</a> &nbsp;|&nbsp; 
-										<strong>Artista</strong>: <a style="color: black" href="/proyecto/artistas/{{c.artistaCancion.id}}">{{c.artistaCancion.nombreArtista}}</a></p>
+									<p style="color: blue"><strong>{% trans "Álbum" %}</strong>: <a style="color: black" href="/proyecto/albumes/{{c.albumCancion.id}}">{{c.albumCancion.nombreAlbum}}</a> &nbsp;|&nbsp; 
+										<strong>{% trans "Estilo" %}</strong>: <a style="color: black" href="/proyecto/estilos/{{c.estiloCancion.id}}">{{c.estiloCancion.nombreEstilo}}</a> &nbsp;|&nbsp; 
+										<strong>{% trans "Artista" %}</strong>: <a style="color: black" href="/proyecto/artistas/{{c.artistaCancion.id}}">{{c.artistaCancion.nombreArtista}}</a></p>
 										<strong style="color: blue">Link</strong>: <a style="color: black" href="https://www.youtube.com/embed/{{c.videoCancion}}" target="_blank">link de la canci&oacute;n</a></p>
 								</div>
 								<!-- music icon -->
