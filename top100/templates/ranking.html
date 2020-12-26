@@ -2,6 +2,14 @@
 {% load static %}
 {% load i18n %}
 {% get_current_language as LANGUAGE_CODE %}
+
+{% block js %}
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/effects.js' %}"></script>
+    <script src="{% static 'js/jquery.qtip-1.0.0-rc3.min.js' %}"></script>
+    <script src="{% static 'js/ajax.js' %}"></script>
+{% endblock %}
+
 {% block contenido %}
 
 <div id="latestalbum" class="hero pad">
@@ -34,35 +42,39 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6">
-                    {% if canciones %}
-                      
-					<!-- play list -->
-					<div class="playlist-content">
-						<ul class="list-unstyled">
+                    <div class="songs">
+                        <h1 class="content-subhead">{% trans "Listado de canciones" %}</h1>
+                        {% if canciones %}
                             {% for c in canciones %}
-							<li class="playlist-number">
-								<!-- info cancion -->
-								<div class="song-info">
-                                    <!-- titulo cancion -->
-									<h4><u><a style= "color:black" href="/proyecto/canciones/{{c.id}}">{{c.nombreCancion}}</a></u></h4>
-                                    <!-- detalles cancion -->
-                                    <p style= "color:blue"><strong>{% trans "Álbum" %}</strong>: <a style= "color:black" href="/proyecto/albumes/{{c.albumCancion.id}}">{{c.albumCancion.nombreAlbum}}</a> &nbsp;|&nbsp; 
+                                <section class="song">
+                                    <header class="song-header">
+                                        <h4 class="song-title"><a href="{% url 'detailCancion' c.id %}" style= "color:black">{{c.nombreCancion}}</a></h4>
+                                        <p class="song-meta">{{c.numeroRanking}}</p>
+                                        
+                                    </header>
+                                    <div class="song-description">
+                                        <p style= "color:blue"><strong>{% trans "Álbum" %}</strong>: <a style= "color:black" href="/proyecto/albumes/{{c.albumCancion.id}}">{{c.albumCancion.nombreAlbum}}</a> &nbsp;|&nbsp; 
 										<strong>{% trans "Estilo" %}</strong>: <a style= "color:black" href="/proyecto/estilos/{{c.estiloCancion.id}}">{{c.estiloCancion.nombreEstilo}}</a> &nbsp;|&nbsp; 
-										<strong>{% trans "Artista" %}</strong>: <a style= "color:black" href="/proyecto/artistas/{{c.artistaCancion.id}}">{{c.artistaCancion.nombreArtista}}</a></p>
-								</div>
-								<!-- music icon -->
-								<div class="music-icon">
-                                    <!-- <a href="#"><i class="fa fa-play"></i></a>  <a href="#"><i class="fa fa-pause"></i></a> -->
-                                    <h5>{{c.numeroRanking}}</h5>
-								</div>
-                                <div class="clearfix"></div>
-                            </li>
+										<strong>{% trans "Artista" %}</strong>: <a style= "color:black" href="/proyecto/artistas/{{c.artistaCancion.id}}">{{c.artistaCancion.nombreArtista}}</a>
+                                    </div>
+            
+                                </section>
                             {% endfor %}
-                        </ul>
+            
                         {% else %}
-			                <p>No hay canciones creadas</p>
+                            <section class="song">
+                                <header class="song-header">
+                                    <h2 class="song-title">No hay canciones creadas.</h2>
+                                    <p class="song-meta">No hay canciones creadas.</p>
+                
+                
+                                </header>
+                                <div class="song-description">
+                                    <p>No hay canciones creadas.</p>
+                                </div>
+                            </section>
                         {% endif %}
-					</div>
+                    </div>
 				</div>
                 
             </div>

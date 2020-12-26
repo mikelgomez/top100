@@ -5,6 +5,11 @@ from django.shortcuts import get_object_or_404, get_list_or_404
 from .models import Artista, Album, Estilo, Cancion
 from .forms import MyForm
 
+def ajax(request, cancion_id):#vista ajax
+    cancion = get_object_or_404(Cancion, pk=cancion_id)
+    context = {'cancion': cancion}
+    return render(request, "ajax.html", context)
+
 
 def index(request):
 	return render(request, 'principal.html')
