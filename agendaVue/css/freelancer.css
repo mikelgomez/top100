@@ -46,6 +46,10 @@ hr.star-primary {
     text-align: center;
 }
 
+ul{
+    list-style:none;
+}
+
 hr.star-light:after,
 hr.star-primary:after {
     content: "\f005";

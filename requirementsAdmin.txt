@@ -1,4 +1,4 @@
-1. pip install django-admin-interface
-2. add admin_interface and colorfield to setting.py(INSTALLED_APPS) before django.contrib.admin
-3. Run python manage.py migrate
-4, Run python manage.py runserver
+django
+django-modeltranslation
+Pillow
+django-admin-interface

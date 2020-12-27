@@ -54,10 +54,16 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#contactos">Contactos</a>
+                        <a href="#contactos">Agenda</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#nuevo">Añadir contacto</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#borrado">Borrar contacto</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#editar">Editar contacto</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#about">Acerca de...</a>
@@ -84,12 +90,14 @@
         </div>
     </header>
 
+
+<div id="app-4">
     <!-- Contactos Grid Section -->
     <section id="contactos">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Contactos</h2>
+                    <h2>Agenda de Contactos</h2>
                     <hr class="star-primary">
                 </div>
             </div>
@@ -106,26 +114,21 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-4">
-                    <p>John Doe</p>
-                </div>
-                <div class="col-xs-4">
-                    <p>john.doe@deusto.es</p>
-                </div>
-                <div class="col-xs-4">
-                    <p>555555555</p>
-                </div>
-                <div class="col-xs-4">
-                      <button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
-                </div>
+                            <ul>
+                                <li v-for="c in contactos">
+                                    <div class="col-xs-4">
+                                        <p>{{ c.name }}</p>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <p>{{ c.email }}</p>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <p>{{ c.telefono }}</p>
+                                    </div>
+                                </li>
+                            </ul>
+                    <p v-if="contactos.length === 0">No hay contactos</p>
             </div>
-            </div>
-            <div>
-              <div class="row">
-                  <div class="col-xs-12">
-                      <p>No se ha encontrado ningún contacto.</p>
-                  </div>
-              </div>
             </div>
         </div>
     </section>
@@ -140,41 +143,107 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <form name="sentMessage" id="contactForm" novalidate>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Nombre</label>
-                                <input type="text" class="form-control" placeholder="Nombre" id="name">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Email</label>
-                                <input type="email" class="form-control" placeholder="Email" id="email">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Teléfono</label>
-                                <input type="tel" class="form-control" placeholder="Número de teléfono" id="phone">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <br>
-                        <div id="success"></div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Añadir</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+		            <div class="add-item-form">
+                        <input v-model="nuevoContacto.name" type="text" placeholder="Nombre">
+                        <input v-model="nuevoContacto.email" type="text" placeholder="E-Mail">
+                        <input v-model="nuevoContacto.telefono" type="text" placeholder="Telefono" @keyup.enter="guardarContacto">
+			            <button @click="guardarContacto">Insertar Contacto</button>
+		            </div>
+		            <p v-if="contactos.length === 0">No hay contactos</p>
             </div>
         </div>
-    </section>
+      </section>
+
+    <!-- Borrar Section -->
+    <section id="borrado">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Agenda de Contactos</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div>
+        <div class="row">
+            <div class="col-xs-4">
+                <h4>Nombre</h4>
+            </div>
+            <div class="col-xs-4">
+                <h4>Borrado</h4>
+            </div>
+        </div>
+        <div class="row">
+                        <ul>
+                            <li v-for="(c, index) in contactos">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <p>{{ c.name }}</p>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <button @click="borrarContacto(index)">Borrar</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <button @click="borrarPrimerContacto">Borrar Primer Contacto</button>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <button @click="borrarUltimoContacto">Borrar Ultimo Contacto</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                <p v-if="contactos.length === 0">No hay contactos</p>
+        </div>
+        </div>
+    </div>
+</section>
+
+<!-- Editar -->
+<section id="editar">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Editar contacto</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+                <div class="add-item-form">
+                    <input v-model="nuevoContacto.name" type="text" placeholder="Nombre">
+                    <input v-model="nuevoContacto.email" type="text" placeholder="E-Mail">
+                    <input v-model="nuevoContacto.telefono" type="text" placeholder="Telefono">
+                </div>
+                <p v-if="contactos.length === 0">No hay contactos</p>
+        </div>
+        <br/>
+        <div class="row">
+            <ul>
+                <li v-for="(c, index) in contactos">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <p>{{ c.name }}</p>
+                        </div>
+                        <div class="col-xs-3">
+                            <p>{{ c.email }}</p>
+                        </div>
+                        <div class="col-xs-3">
+                            <p>{{ c.telefono }}</p>
+                        </div>
+                        <div class="col-xs-3">
+                            <button @click="editarContacto(index)">Editar</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <p v-if="contactos.length === 0">No hay contactos</p>
+        </div>
+    </div>
+  </section>
+      
+</div>
 
     <!-- About Section -->
     <section class="success" id="about">
@@ -230,6 +299,76 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/freelancer.js"></script>
+	
+	
+	<script type="text/javascript">
+	var app4 = new Vue({
+	el:'#app-4',
+	data: {
+            header:'Agenda de contactos',
+			nuevoContacto:{
+                    name:'',
+                    email:'',
+                    telefono:''
+            },
+			contactos:[
+            {
+                name:'Adrian',
+                email:'adrian1@gmail.com',
+                telefono:'911875642'
+            },
+            {
+                name:'Jaime',
+                email:'jaime25@gmail.com',
+                telefono:'941578493'
+            },
+            {
+                name:'Carlos',
+                email:'carlos39@gmail.com',
+                telefono:'604935874'
+            },
+            {
+                name:'Pedro',
+                email:'pedro98@gmail.com',
+                telefono:'615212356'
+            }
+			]
+		},
+	methods:{
+		
+        borrarContacto: function(index){
+            this.contactos.splice(index, 1);
+        },
+        editarContacto: function(index){
+            this.contactos.splice(index, 1);
+            this.contactos.splice('insertAtIndex', index, {
+                name: this.nuevoContacto.name,
+                email: this.nuevoContacto.email,
+                telefono: this.nuevoContacto.telefono
+            });
+            this.nuevoContacto.name = "";
+            this.nuevoContacto.email = "";
+            this.nuevoContacto.telefono= "";
+        },
+        borrarPrimerContacto: function(event, cont){
+            this.contactos.splice(0, 1);
+        },
+        borrarUltimoContacto: function(event){
+            this.contactos.pop();
+        },
+        guardarContacto: function (event) {
+            this.contactos.push({
+                name: this.nuevoContacto.name,
+                email: this.nuevoContacto.email,
+                telefono: this.nuevoContacto.telefono
+            });
+            this.nuevoContacto.name = "";
+            this.nuevoContacto.email = "";
+            this.nuevoContacto.telefono= "";
+        }
+	}
+	})
+	</script>
 
 </body>
 
